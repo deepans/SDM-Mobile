@@ -1,0 +1,120 @@
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Raleway Medium'), local('Raleway-Medium'), url('font/Raleway-Medium.ttf') format('woff');
+}
+
+@background-color: orange;
+@note-background-fold-color: rgb(39, 168, 45);
+@note-background-color: rgb(47, 139, 39);
+@note-font-size: 25px;
+@note-button-text-color: #fef4e9;
+@button-font-size: 17px;
+
+.font {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+}
+
+body,html{
+    margin:0;
+    padding:0;
+    height:100%;
+}
+
+#content {
+    position:absolute;
+    height:auto;
+    bottom:0;
+    top:0;
+    left:0;
+    right:0;
+    margin:5px;
+    border-radius: 10px;
+    background-color: @background-color;
+    overflow: hidden;
+}
+
+#flickable-wrapper{
+    height: 100%;
+}
+
+.note-container {
+    display:table-cell; 
+    vertical-align:middle;
+    font-size: @note-font-size;
+    .font;
+}
+
+.note {
+    display: table;
+    text-align: center;
+    float: left;
+    height: 100%;
+}
+
+.note-text{
+    position:relative;
+    display: block;
+    padding: 20px;
+    margin: 20px;
+    background: @note-background-color;
+    border-radius: 10px 0 10px 10px;
+    box-shadow:0 1px 0px rgba(0,0,0,0.3), -1.5px 1.5px 1px rgba(0,0,0,0.2);
+}
+
+.note-text:before{
+    content:"";
+    position:absolute;
+    top:0;
+    right:0;
+    border-width:0 20px 20px 0;
+    border-style:solid;
+    border-color:@background-color @background-color @note-background-fold-color @note-background-fold-color;
+
+    -webkit-box-shadow:0 0px 0px rgba(0,0,0,0.3), -2px 2px 1px rgba(0,0,0,0.2);
+    -moz-box-shadow:0 0px 0px rgba(0,0,0,0.3), -2px 2px 1px rgba(0,0,0,0.2);
+    box-shadow:0 0px 0px rgba(0,0,0,0.3), -2px 2px 1px rgba(0,0,0,0.2);
+}
+
+.no_flicker{
+    -webkit-perspective: 1000;
+    -webkit-backface-visibility: hidden;
+}
+
+
+.button {
+	display: inline-block;
+	outline: none;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	padding: .5em 2em .55em;
+	text-shadow: 0 1px 1px rgba(0,0,0,.3);
+	-webkit-border-radius: .5em; 
+	-moz-border-radius: .5em;
+	border-radius: .5em;
+	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	-moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    font-size: @button-font-size;
+    .font;
+    margin: 0 5px;
+}
+
+.green-with-gradient {
+	color: @note-button-text-color;
+	border: solid 1px #da7c0c;
+	background: rgb(47, 139, 39);
+	background: -webkit-gradient(linear, left top, left bottom, from(rgb(41, 167, 36)), to(rgb(32, 107, 26)));
+	background: -moz-linear-gradient(top,  rgb(41, 167, 36), rgb(32, 107, 26));
+}
+
+.red-with-gradient {
+	color: @note-button-text-color;
+	border: solid 1px #da7c0c;
+	background: rgb(255, 36, 6);
+	background: -webkit-gradient(linear, left top, left bottom, from(rgb(230, 147, 70)), to(rgb(255, 36, 6)));
+	background: -moz-linear-gradient(top,  rgb(230, 147, 70), rgb(255, 36, 6));
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <title>iCycleTel</title>
+        <script src="zepto.min.js"></script>
+        <script src="handlebars.js"></script>
+        <link rel="stylesheet" href="iphone.css" />
+        <script src="cycletel.js"></script>
+        <script type="text/javascript">
+            Zepto(function($){
+            });
+        </script>
+    </head>
+    <body>
+        <div id="content"></div>
+
+        <script id="note-template" type="text/x-handlebars-template">
+            <div id={{id}} style="{{width}}" class="no_flicker note">
+                <div class="note-container">
+                    <div class="note-text">{{text}}</div>
+                        {{#each transitions}}
+                            <a href="#" id="{{this.id}}" class="button {{style}}">{{this.key}}</a>
+                        {{/each}}
+                </div>
+            </div>
+        </script>
+    </body>
+</html>
